@@ -1,0 +1,17 @@
+task inner {
+	inputs.file "src/topLevel.txt"
+
+	doLast {}
+}
+
+task outer {
+	dependsOn inner
+	inputs.dir "src"
+
+	doLast {}
+}
+
+wrapper {
+	gradleVersion = "2.11"
+}
+
